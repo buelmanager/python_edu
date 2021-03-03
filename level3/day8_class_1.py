@@ -30,3 +30,4 @@ def attack(name, location, damage):
 attack( name,"1시",damage)
 attack( tank_name,"1시",tank_damage)
 attack( tank2_name,"1시",tank2_damage)
+ 

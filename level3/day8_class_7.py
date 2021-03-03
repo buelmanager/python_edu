@@ -1,4 +1,4 @@
-# 오버로딩 
+# super 
 
 #일반유닛
 class Unit:
@@ -59,16 +59,16 @@ class FlyableAttackUnit(AttackUnit, Flyable):
         Flyable.fly(self, self.name,location)
         
         
-# 벌쳐 : 지상
-vulture = AttackUnit("벌쳐", 80,10,20)
-
-# 배틀크루저 : 공중
-battecruiser = FlyableAttackUnit("배틀크루져",500,25,3)
-
-vulture.move("11시")
-#battecruiser.fly(battecruiser.name,"9시")
-
-#Unit의 move 를 오버라이딩한다.
-battecruiser.move("9시")
-
- 
+# 건물
+class BuildingUnit(Unit):
+    def __init__(self, name, hp, location):
+        
+        #다중 상속일 경우는 1의 경우처럼 명시적으로 사용을 하고
+        #한개만 있을때는 1또는 2의 방법을 택한다.
+        
+        #1. 
+        # Unit.__init__(self,name,hp,0)
+        
+        #2.
+        super().__init__(name,hp,0)
+        self.location = location

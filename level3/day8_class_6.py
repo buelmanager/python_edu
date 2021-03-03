@@ -1,4 +1,4 @@
-# 오버로딩 
+# pass 
 
 #일반유닛
 class Unit:
@@ -59,16 +59,19 @@ class FlyableAttackUnit(AttackUnit, Flyable):
         Flyable.fly(self, self.name,location)
         
         
-# 벌쳐 : 지상
-vulture = AttackUnit("벌쳐", 80,10,20)
+# 건물
+class BuildingUnit(Unit):
+    def __init__(self, name, hp, location):
+        pass
+    
+# 서플라이디폿 : 건물, 1개건물 = 8유닛
+supply_depot = BuildingUnit("서플라이디폿",500,"7시")
 
-# 배틀크루저 : 공중
-battecruiser = FlyableAttackUnit("배틀크루져",500,25,3)
+def game_start():
+    print ("게임을 시작합니다.")
+    
+def game_over():
+    pass
 
-vulture.move("11시")
-#battecruiser.fly(battecruiser.name,"9시")
-
-#Unit의 move 를 오버라이딩한다.
-battecruiser.move("9시")
-
- 
+game_start()
+game_over()
